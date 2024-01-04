@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="userInput">Enter a Number:</label>
+    <input type="text" id="userInput">
+    <button onclick="checkNumber()">Check Number</button>
+      
+    <p id="result"></p>
+      
+    <script>
+    function checkNumber() {
+    var userInput = document.getElementById("userInput").value;
+    var num = parseInt(userInput);
+    if (!isNaN(num)) {
+        if (num % 2 == 0) {
+            document.getElementById("result").innerHTML = num + " is an Even Number";
+        } else {
+            document.getElementById("result").innerHTML = num + " is an Odd Number";
+        }
+        } else {
+            document.getElementById("result").innerHTML = "Please enter a valid number.";
+        }
+          }
+        </script>
+</body>
+</html>

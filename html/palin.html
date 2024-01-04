@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palindrome Checker</title>
+</head>
+<body>
+  <h2>Palindrome Checker</h2>
+  
+  <label for="userInput">Enter a number:</label>
+  <input type="text" id="userInput" placeholder="Enter a number">
+
+  <button onclick="checkPalindrome()">Check</button>
+
+  <p id="result"></p>
+
+  <script>
+    function isPalindrome(str) {
+      const cleanedStr = str.replace(/[^0-9]/g, '');
+      return cleanedStr === cleanedStr.split('').reverse().join('');
+    }
+
+    function checkPalindrome() {
+      const userInput = document.getElementById('userInput').value;
+      const resultElement = document.getElementById('result');
+
+      if (userInput.trim() === '') {
+        resultElement.textContent = 'Please enter a number.';
+        return;
+      }
+
+      const isPal = isPalindrome(userInput);
+
+      if (isPal) {
+        resultElement.textContent = 'It is a palindrome!';
+      } else {
+        resultElement.textContent = 'It is not a palindrome.';
+      }
+    }
+  </script>
+</body>
+</html>
